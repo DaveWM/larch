@@ -1,8 +1,8 @@
 (defproject larch "0.1.0-SNAPSHOT"
-  :description "FIXME: write description"
-  :url "http://example.com/FIXME"
-  :license {:name "Eclipse Public License"
-            :url "http://www.eclipse.org/legal/epl-v10.html"}
+  :description "An elm-like clojurescript framework"
+  :url "An elm-like clojurescript framework"
+  :license {:name "GPL V3"
+            :url "https://www.gnu.org/licenses/gpl-3.0.en.html"}
   :plugins [[lein-cljsbuild "1.1.5"]]
   :dependencies [[org.clojure/clojure "1.9.0-alpha15"]
                  [org.clojure/clojurescript "1.9.494"]
