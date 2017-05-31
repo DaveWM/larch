@@ -70,7 +70,7 @@ We need to add a message onto the message channel for each event that we care ab
 
 Now we can use our message channel to update our app model, which we can use to render our view, which in turn generates more messages. The overall app architecture looks very similar to the Elm architecture:
 
-![msgs->updates! diagram](images/larch-msgs-updates.png)
+![msgs->updates! diagram](images/larch-architecture.png)
 
 ## Examples
 
