@@ -37,7 +37,7 @@ Updating the model is easiest if you use DataScript. Each update will be a trans
 (go-loop []
   (let [update (<! updates-channel)]
     (datascript.core/transact! model update)
-	(recur)))
+    (recur)))
 ```
 
 You can take a similar approach if your model is a standard Clojure data structure, but you will effectively have to implement `transact!` yourself, to update the app model based on the update.
