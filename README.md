@@ -1,4 +1,4 @@
-# Larch (Alpha)
+# Larch (Alpha)  [![Clojars Project](https://img.shields.io/clojars/v/larch.svg)](https://clojars.org/larch)
 
 ![The Larch](https://s-media-cache-ak0.pinimg.com/originals/17/ff/7f/17ff7f207250309896e0d1f859c9ed41.jpg)
 
@@ -35,7 +35,9 @@ This diagram illustrates the overall process:
 
 ## Sounds great, so how do I get going with Larch?
 
-Larch consists of just a single function, `msgs->updates!`. This basically transforms a channel of messages to a channel of updates, as described above. It takes the following arguments:
+First, add the dependency `[larch "0.1.0"]`.
+
+Larch consists of just a single function, `msgs->updates!`, in the `larch.core` namespace. This basically transforms a channel of messages to a channel of updates, as described above. It takes the following arguments:
 
 * `msg-chan` - a channel of all the messages that your app cares about. These messages may be triggered by user interaction, or other global events (loss of internet connection, time changes, etc.). These events can be in any format whatsoever (e.g. strings, keywords, tuples), but it is recommended to use the format `[message-type payload...]`.
 * `model` - an atom containing the entire state of your app.

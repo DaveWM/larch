@@ -1,4 +1,4 @@
-(defproject larch "0.1.0-SNAPSHOT"
+(defproject larch "0.1.0"
   :description "An elm-like clojurescript framework"
   :url "An elm-like clojurescript framework"
   :license {:name "GPL V3"
