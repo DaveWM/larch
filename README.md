@@ -23,7 +23,7 @@ Notes:
 
 ## So how does Larch work?
 
-Larch's only concern is to transform a channel of messages into a channel of updates (step 2 above). This transformation is easy when it is a pure, synchronous function. In fact, we could just use a the `core.async` `pipeline` function on the message channel. However it becomes more difficult to manage, and test, when messages may trigger asynchronous actions (such as http requests), or need to interact with the (mutable) browser state (e.g. local storage). This is where Larch can help you. 
+Larch's only concern is to transform a channel of messages into a channel of updates (step 2 above). This transformation is easy when it is a pure, synchronous function. In fact, we could just use the `core.async` `pipeline` function on the message channel. However it becomes more difficult to manage, and test, when messages may trigger asynchronous actions (such as http requests), or need to interact with the (mutable) browser state (e.g. local storage). This is where Larch can help you. 
 
 Larch tackles this problem in a similar way to Elm. You supply a `process-msg` function to Larch, which is similar to the `update` function in Elm. This function takes a message and the current model value, and returns a tuple of `[update, command]`. Since updates are data structures, the transformation from message to update is a pure, synchronous function. A "command" is an impure or async function, that returns a channel of messages. All your impure and asynchronous operations should be done here. The channel returned from a command is fed back in to the main message channel.
 
