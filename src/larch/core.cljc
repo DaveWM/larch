@@ -1,6 +1,5 @@
 (ns larch.core
-  (:require [cljs.core.async :refer [chan <! >! pipe]])
-  (:require-macros [cljs.core.async.macros :refer [go-loop]]))
+  (:require [clojure.core.async :refer [chan <! >! pipe go-loop]]))
 
 (defn msgs->updates! [msg-chan model dependencies process-msg]
   "Takes an message channel, the app model, a map of dependencies (which cause side effects) and a process-msg function.
