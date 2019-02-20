@@ -1,0 +1,19 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/larch
+    docker:
+      - image: davewm/docker-leiningen-phantomjs
+    environment:
+      LEIN_ROOT: nbd
+      JVM_OPTS: -Xmx3200m # limit the maximum heap size to prevent out of memory errors
+    steps:
+      - checkout
+      - restore_cache:
+          key: larch-{{ checksum "project.clj" }}
+      - run: lein deps
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: larch-{{ checksum "project.clj" }}
+      - run: lein do test, doo phantom test once
